@@ -78,6 +78,8 @@ index=endpoint sourcetype="WinEventLog:Security"
 
 ![Crowbar Launch](../screenshots/crowbar%20tool%20bruteforce.PNG)
 
+![PowerShell Attack](../screenshots/t1136.002.PNG)
+
 ### 2. RDP brute-force in progress:
 
 ![Brute Forcing](../screenshots/crowbar%20bruteforce%20in%20progress.PNG)
