@@ -59,13 +59,3 @@ Download from: [https://www.splunk.com/en\_us/download/universal-forwarder.html]
 Install on **Windows Target** and **AD01**, configure each to forward logs to Splunk01 IP on port `9997`.
 
 ---
-
-## 📸 Screenshots
-
-### 1. Splunk01 VM setup (with NAT network):
-
-![Splunk NAT](../screenshots/creating%20nat%20network%20to%20our%20ip,%20than%20putting%20all%20the%20vms%20on%20it%20is%20the%20splunk%20ss.PNG)
-
-### 2. Splunk VM attached to NAT network:
-
-![Splunk Adapter](../screenshots/puytting%20splunk%20to%20nat%20netwrok.PNG)
