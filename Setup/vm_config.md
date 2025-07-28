@@ -30,8 +30,8 @@ All virtual machines were created using Oracle VirtualBox and attached to the sa
 
 VM configuration views in VirtualBox:
 
-![Example VM Config 1](../screenshots/nat.PNG)  
-![Example VM Config 2](../screenshots/natt.PNG)
+![Windows Static IP](../screenshots/nat.PNG)
+![Windows Static IP](../screenshots/natt.PNG)
 
 ---
 
