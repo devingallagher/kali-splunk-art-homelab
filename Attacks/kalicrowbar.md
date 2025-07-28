@@ -54,8 +54,7 @@ index=endpoint EventCode=4625
 * Repeated attempts from same IP/usernames
 * Spike in authentication failures over short time
 
-> 🔎 **Correlation with Account Lockouts (4740)**:
-> A high number of 4625 events may lead to account lockout events (ID 4740). This correlation confirms the brute-force impact.
+> 🔎 **Correlation with Account Lockouts (4740)**: A high number of 4625 events may lead to account lockout events (ID 4740). This correlation confirms the brute-force impact.
 
 ---
 
@@ -70,16 +69,24 @@ index=endpoint EventCode=4625
 
 ### 1. Crowbar tool launched with RDP brute-force settings:
 
-![Crowbar Launch](../screenshots/crowbar%20tool%20bruteforce.PNG)
+![Crowbar Launch](../screenshots/crowbar.PNG)
 
 ### 2. RDP brute-force in progress:
 
-![Brute Forcing](../screenshots/crowbar%20bruteforce%20in%20progress.PNG)
+![Brute Forcing](../screenshots/kali%20passwords.PNG)
 
 ### 3. Windows logs show Event ID 4625 for failed attempts:
 
-![Failed Logins](../screenshots/rdp%20failed%20login%20splunk%20event%204625.PNG)
+![Failed Logins](../screenshots/kali%20account%20fialed%20to%20log%20on.PNG)
 
 ### 4. Splunk detection of brute-force login attempts:
 
-![Splunk Detection](../screenshots/rdp%20attack%20brute%20force%20evidence.PNG)
+![Splunk Detection](../screenshots/kali%20brute%20force%20activity%2025.PNG)
+
+### 5. Splunk code breakdown:
+
+![Code 4625](../screenshots/kali%20code%204625.PNG)
+
+### 6. Successful login captured from Kali:
+
+![Successful Login](../screenshots/kali%20login%20on%20splunk.PNG)
