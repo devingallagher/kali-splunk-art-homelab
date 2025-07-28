@@ -92,11 +92,6 @@ index=endpoint EventCode=4625
 
 ![Splunk Detection](../screenshots/kali%20brute%20force%20activity%2025.PNG)
 
-
-### 6. Successful login captured from Kali:
-
-![Successful Login](../screenshots/kali%20login%20on%20splunk.PNG)
-
 ### 7. Splunk query result showing Event ID 4624 (success):
 
 ![4624 Success](../screenshots/4624%20success.PNG)
@@ -107,4 +102,4 @@ index=endpoint EventCode=4625
 
 ### 9. Workstation identification for successful login:
 
-![Source Info](../screenshots/workstation%20the%20success%20log%20in%20came%20from.PNG)
+![Successful Login](../screenshots/kali%20login%20on%20splunk.PNG)
