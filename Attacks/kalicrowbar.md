@@ -72,14 +72,14 @@ index=endpoint EventCode=4625
 
 ## 📸 Screenshots
 
-### 1. Crowbar tool launched with RDP brute-force settings:
-
-![Crowbar Launch](../screenshots/crowbar.PNG)
 
 ### 2. RDP brute-force in progress:
 
 ![Brute Forcing](../screenshots/kali%20passwords.PNG)
 
+### 1. Crowbar tool launched with RDP brute-force settings:
+
+![Crowbar Launch](../screenshots/crowbar.PNG)
 ### 5. Splunk code breakdown:
 
 ![Code 4625](../screenshots/kali%20code%204625.PNG)
