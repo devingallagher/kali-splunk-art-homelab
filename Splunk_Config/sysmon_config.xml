@@ -1,0 +1,46 @@
+<Sysmon schemaversion="4.50">
+  <HashAlgorithms>*</HashAlgorithms>
+  <EventFiltering>
+    <!-- Log process creation with full command line -->
+    <ProcessCreate onmatch="include">
+      <CommandLine condition="contains">powershell</CommandLine>
+      <CommandLine condition="contains">cmd</CommandLine>
+      <CommandLine condition="contains">regsvr32</CommandLine>
+    </ProcessCreate>
+
+    <!-- Log file creation by suspicious processes -->
+    <FileCreate onmatch="include">
+      <Image condition="contains">powershell.exe</Image>
+      <Image condition="contains">cmd.exe</Image>
+    </FileCreate>
+
+    <!-- Log network connections -->
+    <NetworkConnect onmatch="include">
+      <Image condition="end with">powershell.exe</Image>
+    </NetworkConnect>
+
+    <!-- Log driver load -->
+    <DriverLoad onmatch="include">
+      <ImageLoaded condition="contains">.sys</ImageLoaded>
+    </DriverLoad>
+
+    <!-- Log image loads -->
+    <ImageLoad onmatch="include">
+      <ImageLoaded condition="contains">.dll</ImageLoaded>
+    </ImageLoad>
+
+    <!-- Log registry key creation -->
+    <RegistryEvent onmatch="include">
+      <Rule groupRelation="or">
+        <RegistryKey condition="contains">Run</RegistryKey>
+        <Details condition="contains">powershell</Details>
+      </Rule>
+    </RegistryEvent>
+
+    <!-- Log user creation -->
+    <PipeEvent onmatch="include" />
+
+    <!-- Catch all process creations if you want full visibility -->
+    <ProcessCreate onmatch="exclude" />
+  </EventFiltering>
+</Sysmon>
