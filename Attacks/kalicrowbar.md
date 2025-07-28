@@ -92,13 +92,13 @@ index=endpoint EventCode=4625
 
 ![Splunk Detection](../screenshots/kali%20brute%20force%20activity%2025.PNG)
 
-### 7. Splunk query result showing Event ID 4624 (success):
-
-![4624 Success](../screenshots/4624%20success.PNG)
-
 ### 8. Windows Security Log Event ID 4624 documentation:
 
 ![Logon Doc](../screenshots/account%20logged%20on.PNG)
+
+### 7. Splunk query result showing Event ID 4624 (success):
+
+![4624 Success](../screenshots/4624%20success.PNG)
 
 ### 9. Workstation identification for successful login:
 
