@@ -73,26 +73,26 @@ index=endpoint EventCode=4625
 ## 📸 Screenshots
 
 
-### 2. RDP brute-force in progress:
+### 1. RDP brute-force Passwords:
 
 ![Brute Forcing](../screenshots/kali%20passwords.PNG)
 
-### 1. Crowbar tool launched with RDP brute-force settings:
+### 2. Crowbar tool launched with RDP brute-force settings:
 
 ![Crowbar Launch](../screenshots/crowbar.PNG)
-### 5. Splunk code breakdown:
+### 3. Splunk code breakdown:
 
 ![Code 4625](../screenshots/kali%20code%204625.PNG)
 
-### 3. Windows logs show Event ID 4625 for failed attempts:
+### 4. Windows logs show Event ID 4625 for failed attempts:
 
 ![Failed Logins](../screenshots/kali%20account%20fialed%20to%20log%20on.PNG)
 
-### 4. Splunk detection of brute-force login attempts:
+### 5. Splunk detection of brute-force login attempts:
 
 ![Splunk Detection](../screenshots/kali%20brute%20force%20activity%2025.PNG)
 
-### 8. Windows Security Log Event ID 4624 documentation:
+### 6. Windows Security Log Event ID 4624 documentation:
 
 ![Logon Doc](../screenshots/account%20logged%20on.PNG)
 
@@ -100,6 +100,6 @@ index=endpoint EventCode=4625
 
 ![4624 Success](../screenshots/4624%20success.PNG)
 
-### 9. Workstation identification for successful login:
+### 8. Workstation identification for successful login:
 
 ![Successful Login](../screenshots/kali%20login%20on%20splunk.PNG)
