@@ -11,6 +11,7 @@ This simulation demonstrates an RDP brute-force attack using the Crowbar tool ag
 * Launch a brute-force attack using Crowbar
 * Observe failed login attempts (Event ID 4625) in Windows logs
 * Confirm detection in Splunk
+* Validate successful login with Event ID 4624
 
 ---
 
@@ -38,7 +39,8 @@ This command attempts RDP login on the target machine with each credential pair.
 ### Detection Method:
 
 * Windows logs failed login attempts as Event ID **4625**
-* Splunk queries identify excessive 4625 events from a single source
+* Windows logs successful login as Event ID **4624**
+* Splunk queries identify excessive 4625 events from a single source and successful 4624 login
 
 ### Splunk Detection Query:
 
@@ -50,9 +52,10 @@ index=endpoint EventCode=4625
 
 ### What to Look For:
 
-* Numerous Event ID 4625 logs
-* Repeated attempts from same IP/usernames
-* Spike in authentication failures over short time
+* Numerous Event ID 4625 logs (failed attempts)
+* Single Event ID 4624 log (success)
+* Same source IP for all attempts (e.g., `Workstation Name: kali`)
+* Username reused with many passwords, indicating brute-force pattern
 
 > 🔎 **Correlation with Account Lockouts (4740)**: A high number of 4625 events may lead to account lockout events (ID 4740). This correlation confirms the brute-force impact.
 
@@ -60,8 +63,10 @@ index=endpoint EventCode=4625
 
 ## ✅ Result
 
-* Brute-force attempts logged as multiple 4625 events
-* Detection confirmed through Splunk dashboard queries
+* 20 failed attempts logged as multiple Event ID 4625 entries (each password attempt)
+* 1 successful login logged as Event ID 4624 (when valid credentials were guessed)
+* Workstation name `kali` confirms source of the attack
+* Splunk dashboard confirms detection and log details
 
 ---
 
@@ -90,3 +95,15 @@ index=endpoint EventCode=4625
 ### 6. Successful login captured from Kali:
 
 ![Successful Login](../screenshots/kali%20login%20on%20splunk.PNG)
+
+### 7. Splunk query result showing Event ID 4624 (success):
+
+![4624 Success](../screenshots/4624%20success.PNG)
+
+### 8. Windows Security Log Event ID 4624 documentation:
+
+![Logon Doc](../screenshots/account%20logged%20on.PNG)
+
+### 9. Workstation identification for successful login:
+
+![Source Info](../screenshots/workstation%20the%20success%20log%20in%20came%20from.PNG)
