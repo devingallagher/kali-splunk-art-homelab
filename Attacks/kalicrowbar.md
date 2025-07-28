@@ -80,6 +80,10 @@ index=endpoint EventCode=4625
 
 ![Brute Forcing](../screenshots/kali%20passwords.PNG)
 
+### 5. Splunk code breakdown:
+
+![Code 4625](../screenshots/kali%20code%204625.PNG)
+
 ### 3. Windows logs show Event ID 4625 for failed attempts:
 
 ![Failed Logins](../screenshots/kali%20account%20fialed%20to%20log%20on.PNG)
@@ -88,9 +92,6 @@ index=endpoint EventCode=4625
 
 ![Splunk Detection](../screenshots/kali%20brute%20force%20activity%2025.PNG)
 
-### 5. Splunk code breakdown:
-
-![Code 4625](../screenshots/kali%20code%204625.PNG)
 
 ### 6. Successful login captured from Kali:
 
