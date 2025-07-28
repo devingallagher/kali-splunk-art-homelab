@@ -1,74 +1,68 @@
-# Crowbar Brute Force Attack Simulation
+# T1110 – Brute Force (Crowbar RDP)
 
-**Attack Type**: Brute Force Attack using Crowbar
+**MITRE Technique**: [T1110 – Brute Force](https://attack.mitre.org/techniques/T1110/)
 
-This simulation demonstrates a password brute-force attack on an RDP service using Crowbar from Kali Linux, targeting a domain-joined Windows machine. The goal is to validate whether the brute-force attempt is logged and whether detection is possible via Splunk.
+This simulation demonstrates an RDP brute-force attack using the Crowbar tool against a domain-joined Windows 10 target. The purpose is to validate detection capabilities in Windows event logs and Splunk.
 
 ---
 
 ## 🎯 Objective
 
-* Simulate brute-force login attempts using Crowbar
-* Determine visibility of failed logins in Event Viewer and Splunk
-* Assess logging of valid vs. invalid authentication attempts
+* Launch a brute-force attack using Crowbar
+* Observe failed login attempts (Event ID 4625) in Windows logs
+* Confirm detection in Splunk
 
 ---
 
-## 🧪 Tools Used
+## 🧪 Attack Method
 
-* Kali Linux
-* Crowbar tool
-* Windows 10 Domain-Joined VM (Target)
-* Splunk Universal Forwarder
-* Splunk Enterprise with Windows Event Log ingestion
-
----
-
-## 📊 Attack Command
+The Crowbar tool is used with a list of usernames and passwords to perform a brute-force attack over RDP.
 
 ```bash
-crowbar -b rdp -s 192.168.10.100 -u jsmith -C /home/kali/Desktop/passwords.txt
+crowbar -b rdp -s 192.168.10.100/32 -u usernames.txt -C passwords.txt -n 3389
 ```
 
-Where:
-
-* `-b rdp` specifies brute force module as RDP
-* `-s` defines target IP
-* `-u` provides the username to brute force
-* `-C` supplies a list of passwords
+This command attempts RDP login on the target machine with each credential pair.
 
 ---
 
 ## 🔍 Detection in Splunk
 
-### Relevant Windows Logs:
+### Tools Involved:
 
-* **Event ID 4625**: Failed login attempt
-* **Event ID 4624**: Successful login
+* Crowbar running on Kali Linux
+* Target machine running Windows 10 with RDP enabled
+* Sysmon and Windows Event Logging enabled
+* Splunk indexing security logs from the Windows host
 
-### Splunk Query:
+### Detection Method:
+
+* Windows logs failed login attempts as Event ID **4625**
+* Splunk queries identify excessive 4625 events from a single source
+
+### Splunk Detection Query:
 
 ```splunk
-index=endpoint sourcetype="WinEventLog:Security"
-| search EventCode=4625 OR EventCode=4624
-| table _time, Computer, Account_Name, Logon_Type, EventCode, Failure_Reason
+index=endpoint EventCode=4625
+| stats count by Account_Name, host, IpAddress
+| where count > 5
 ```
 
 ### What to Look For:
 
-* Multiple repeated Event ID 4625 for the same username in a short timeframe
-* Followed by a successful login (Event ID 4624)
-* Brute-force login patterns and failed attempts from Kali's IP address
+* Numerous Event ID 4625 logs
+* Repeated attempts from same IP/usernames
+* Spike in authentication failures over short time
 
-> 🔎 **Logon Type 10** indicates a remote desktop session attempt.
+> 🔎 **Correlation with Account Lockouts (4740)**:
+> A high number of 4625 events may lead to account lockout events (ID 4740). This correlation confirms the brute-force impact.
 
 ---
 
 ## ✅ Result
 
-* Multiple failed login attempts (Event ID 4625) recorded in Windows Event Viewer
-* Splunk ingested and displayed logs correctly
-* Event correlation possible to show brute-force behavior from Kali
+* Brute-force attempts logged as multiple 4625 events
+* Detection confirmed through Splunk dashboard queries
 
 ---
 
@@ -77,8 +71,6 @@ index=endpoint sourcetype="WinEventLog:Security"
 ### 1. Crowbar tool launched with RDP brute-force settings:
 
 ![Crowbar Launch](../screenshots/crowbar%20tool%20bruteforce.PNG)
-
-![PowerShell Attack](../screenshots/t1136.002.PNG)
 
 ### 2. RDP brute-force in progress:
 
