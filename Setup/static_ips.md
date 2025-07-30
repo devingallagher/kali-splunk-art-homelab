@@ -30,7 +30,7 @@ All systems use the same:
 6. Click OK, then reboot if prompted
 
 📸 Example:  
-![Windows Static IP](../screenshots/window.PNG)
+![Windows Static IP](../screenshots/windowss.PNG)
 
 ---
 
