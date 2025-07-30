@@ -28,7 +28,7 @@ All virtual machines were connected to a VirtualBox **NAT Network** to allow int
 | Kali Linux            | `Kali`       | `192.168.10.9`   | Attacker (Crowbar brute force)    |
 
 📸 Examples:  
-![Set static IP on target](../screenshots/changing%20the%20target%20machine%20to%20static%20ip.PNG)  
+![Set static IP on target](../screenshots/winsows.PNG)  
 ![Set static IP on Splunk](../screenshots/static%20ip%20set%20on%20splunk.PNG)
 
 ---
