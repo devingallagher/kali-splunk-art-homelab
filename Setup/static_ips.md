@@ -30,7 +30,7 @@ All systems use the same:
 6. Click OK, then reboot if prompted
 
 📸 Example:  
-![Windows Static IP](../screenshots/changing%20the%20target%20machine%20to%20static%20ip.PNG)
+![Windows Static IP](../screenshots/windows.PNG)
 
 ---
 
