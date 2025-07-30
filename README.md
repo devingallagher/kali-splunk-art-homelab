@@ -1,4 +1,4 @@
-# 📘Active Directory – README
+# Active Directory – README
 
 This lab simulates a real-world detection and monitoring environment using Atomic Red Team, Splunk, Sysmon, and common attack tools like Crowbar. It’s designed to help SOC analysts, students, and enthusiasts understand how to detect malicious behavior in enterprise systems.
 
@@ -15,7 +15,7 @@ This lab simulates a real-world detection and monitoring environment using Atomi
 
 ---
 
-## 📍 What’s Covered
+## What’s Covered
 
 - Installing Sysmon with a custom config for process/network visibility
 - Setting up Splunk on Ubuntu and forwarding logs from Windows
@@ -26,7 +26,7 @@ This lab simulates a real-world detection and monitoring environment using Atomi
 
 ---
 
-## 📦 Installations
+## Installations
 
 **Splunk Universal Forwarder**  
 → Installed on:  
