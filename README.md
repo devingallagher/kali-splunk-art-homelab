@@ -4,7 +4,7 @@ This lab simulates a real-world detection and monitoring environment using Atomi
 
 ---
 
-## 🔧 Lab Components
+## Lab Components
 
 | Component         | Role                                              |
 |------------------|---------------------------------------------------|
