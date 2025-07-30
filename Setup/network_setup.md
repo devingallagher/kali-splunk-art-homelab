@@ -23,7 +23,7 @@ All virtual machines were connected to a VirtualBox **NAT Network** to allow int
 | Machine               | Hostname     | IP Address       | Role                              |
 |-----------------------|--------------|------------------|-----------------------------------|
 | Windows Server 2019   | `AD01`       | `192.168.10.7`   | Domain Controller, DNS            |
-| Windows 10            | `Target01`   | `192.168.10.8`   | Target (Sysmon + Atomic Red Team) |
+| Windows 10            | `Target01`   | `192.168.10.100`   | Target (Sysmon + Atomic Red Team) |
 | Splunk Server (Linux) | `Splunk01`   | `192.168.10.10`  | Splunk Indexer                    |
 | Kali Linux            | `Kali`       | `192.168.10.9`   | Attacker (Crowbar brute force)    |
 
