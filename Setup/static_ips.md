@@ -9,7 +9,7 @@ This guide explains how static IP addresses were manually assigned to each virtu
 | Machine               | Hostname     | Static IP       | Notes                                  |
 |-----------------------|--------------|------------------|-----------------------------------------|
 | Windows Server 2019   | AD01         | 192.168.10.7     | Domain Controller, DNS Server           |
-| Windows 10 Target     | Target01     | 192.168.10.8     | Runs Atomic Red Team + Sysmon           |
+| Windows 10 Target     | Target01     | 192.168.10.100     | Runs Atomic Red Team + Sysmon           |
 | Kali Linux            | Kali         | 192.168.10.9     | Runs Crowbar brute-force attacks        |
 | Splunk Server         | Splunk01     | 192.168.10.10    | Receives logs from all Windows systems  |
 
