@@ -46,7 +46,7 @@ All virtual machines were connected to a VirtualBox **NAT Network** to allow int
 
 ---
 
-## ✅ DNS Setup
+## ✅ Target Machine DNS Setup
 
 All machines were configured to use the Domain Controller (`192.168.10.7`) as their primary DNS server to ensure domain joining, hostname resolution, and log forwarding.
 
